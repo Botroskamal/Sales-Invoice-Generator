@@ -13,6 +13,7 @@ public class LeftPanel extends JPanel implements ActionListener {
     JTable tb;
     int row;
     int len;
+    String[][] d;
 
     public LeftPanel(){
     }
@@ -24,7 +25,7 @@ public class LeftPanel extends JPanel implements ActionListener {
 
         final int rows = InvoicesTable.size() / 4;
 
-        String[][] d = new String[rows][4];
+        d = new String[rows][4];
 
         for(int i = 0; i < d.length; i++) {
             for(int j = 0; j < d[i].length; j++) {
