@@ -16,14 +16,17 @@ public class ButtonPanel extends JPanel implements ActionListener{
 
     public ButtonPanel(String firstButton, String secondButton){
         super();
+
+        LeftPanel l = new LeftPanel( );
+
         btn[0] = new Button( firstButton );
         btn[1] = new Button( secondButton );
 
         btn[0].setActionCommand( firstButton );
         btn[1].setActionCommand( secondButton );
 
-        btn[0].addActionListener( this );
-        btn[1].addActionListener( this );
+        btn[0].addActionListener( l );
+        btn[1].addActionListener( l );
 
         setLayout( new FlowLayout() );
 

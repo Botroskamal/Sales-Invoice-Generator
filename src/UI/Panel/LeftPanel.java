@@ -12,6 +12,10 @@ public class LeftPanel extends JPanel implements ActionListener {
     private ButtonPanel bPanel;
     JTable tb;
     int row;
+    int len;
+
+    public LeftPanel(){
+    }
 
     public LeftPanel(ArrayList<String> InvoicesTable) {
         super();
@@ -27,6 +31,8 @@ public class LeftPanel extends JPanel implements ActionListener {
                 d[i][j] = InvoicesTable.get( i * 4 + j );
             }
         }
+
+        len = d.length;
 
         String[] Headers = {"NO.", "Date", "Customer", "Total"};
 
@@ -50,9 +56,24 @@ public class LeftPanel extends JPanel implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+
+        System.out.println(row);
         if(e.getActionCommand().equals( "Delete Invoice" )) {
             if(row != -1) {
+                String[][] temp = new String[len][3];
+                for(int i = 0; i < len; i++) {
+                    if(i+1 == row){
+                        continue;
+                    }
+                    for (int j = 0; j < 4; j++) {
+                        temp[i][j] = d[i][j];
+                    }
+                }
+                for(int i = 0; i < temp.length; i++) {
+                    for (int j = 0; j < 4; j++) {
 
+                    }
+                }
             }
         }
     }
